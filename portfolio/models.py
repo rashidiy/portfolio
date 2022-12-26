@@ -1,5 +1,5 @@
 from ckeditor.fields import RichTextField
-from django.db.models import Model, CharField, URLField, DateTimeField
+from django.db.models import Model, CharField, URLField, DateTimeField, EmailField
 from django_resized import ResizedImageField
 
 
@@ -19,3 +19,9 @@ class Post(Model):
     short_des = CharField(max_length=50)
     long_des = RichTextField()
     created_at = DateTimeField(auto_now_add=True)
+
+
+class Contact(Model):
+    name = CharField(max_length=100)
+    email = EmailField()
+    message = CharField(max_length=1000)

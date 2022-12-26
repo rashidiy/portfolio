@@ -575,163 +575,27 @@
                     <div class="portfolio_list gallery_zoom w-full h-auto clear-both float-left pt-[60px]">
                         <div class="swiper-container">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="list_inner w-full h-auto clear-both float-left relative rounded-[10px] overflow-hidden">
-                                        <div class="image relative overflow-hidden">
-                                            <img class="relative min-w-full opacity-0"
-                                                 src="{% static 'portfolio/assets/img/thumbs/1-1.jpg' %}" alt=""/>
-                                            <div class="main absolute inset-0 bg-no-repeat bg-center bg-cover scale-[1] transition-all duration-300"
-                                                 data-img-url="{% static 'portfolio/assets/img/portfolio/1.jpg' %}"></div>
-                                        </div>
-                                        <div class="details">
-                                            <h3>Sweet Fruit</h3>
-                                            <span>Vimeo</span>
-                                        </div>
-                                        <a class="edrea_tm_full_link popup-vimeo"
-                                           href="../../../external.html?link=https://vimeo.com/321091335"></a>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="list_inner w-full h-auto clear-both float-left relative rounded-[10px] overflow-hidden">
-                                        <div class="image relative overflow-hidden">
-                                            <img class="relative min-w-full opacity-0"
-                                                 src="{% static 'portfolio/assets/img/thumbs/1-1.jpg' %}" alt=""/>
-                                            <div class="main absolute inset-0 bg-no-repeat bg-center bg-cover scale-[1] transition-all duration-300"
-                                                 data-img-url="{% static 'portfolio/assets/img/portfolio/2.jpg' %}"></div>
-                                        </div>
-                                        <div class="details">
-                                            <h3>Good Present</h3>
-                                            <span>Youtube</span>
-                                        </div>
-                                        <a class="edrea_tm_full_link popup-youtube"
-                                           href="../../../external.html?link=https://www.youtube.com/watch?v=7e90gBu4pas"></a>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="list_inner w-full h-auto clear-both float-left relative rounded-[10px] overflow-hidden">
-                                        <div class="image relative overflow-hidden">
-                                            <img class="relative min-w-full opacity-0"
-                                                 src="{% static 'portfolio/assets/img/thumbs/1-1.jpg' %}" alt=""/>
-                                            <div class="main absolute inset-0 bg-no-repeat bg-center bg-cover scale-[1] transition-all duration-300"
-                                                 data-img-url="{% static 'portfolio/assets/img/portfolio/3.jpg' %}"></div>
-                                        </div>
-                                        <div class="details">
-                                            <h3>Mockup Cream</h3>
-                                            <span>Soundcloud</span>
-                                        </div>
-                                        <a class="edrea_tm_full_link soundcloude_link mfp-iframe audio"
-                                           href="../../../external.html?link=https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/471954807&amp;color=%23ff5500&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></a>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="list_inner w-full h-auto clear-both float-left relative rounded-[10px] overflow-hidden">
-                                        <div class="image relative overflow-hidden">
-                                            <img class="relative min-w-full opacity-0"
-                                                 src="{% static 'portfolio/assets/img/thumbs/1-1.jpg' %}" alt=""/>
-                                            <div class="main absolute inset-0 bg-no-repeat bg-center bg-cover scale-[1] transition-all duration-300"
-                                                 data-img-url="{% static 'portfolio/assets/img/portfolio/4.jpg' %}"></div>
-                                        </div>
-                                        <div class="details">
-                                            <h3>Delicious Apple</h3>
-                                            <span>Detail</span>
-                                        </div>
-                                        <a class="edrea_tm_full_link portfolio_popup" href="#"></a>
-
-                                        <div class="edrea_tm_hidden_content">
-                                            <div class="portfolio_popup_details w-full h-auto clear-both float-left px-[50px] pt-[50px] pb-[20]">
-                                                <div class="text w-full float-left mb-[42px]">
-                                                    <p class="mb-[10]">An apple is an edible fruit produced by an apple
-                                                        tree. Apple trees are cultivated worldwide and are the most
-                                                        widely grown species in the genus Malus. The tree originated in
-                                                        Central Asia, where its wild ancestor, Malus sieversii, is still
-                                                        found today.</p>
-                                                    <p>Apples grown from seed tend to be very different from those of
-                                                        the parents, and the resultant fruit frequently lack desired
-                                                        characteristics. Generally then, apple cultivars are propagated
-                                                        by clonal grafting onto rootstocks. Apple trees grown without
-                                                        rootstocks tend to be larger and much slower to fruit after
-                                                        planting.</p>
+                                {% for portfolio in portfolios %}
+                                    <a href="{{ portfolio.project_url }}" target="_blank">
+                                        <div class="swiper-slide">
+                                            <div class="list_inner w-full h-auto clear-both float-left relative rounded-[10px] overflow-hidden">
+                                                <div class="image relative overflow-hidden">
+                                                    <img class="relative min-w-full opacity-0"
+                                                         src="{% static 'portfolio/assets/img/thumbs/1-1.jpg' %}"
+                                                         alt=""/>
+                                                    <div class="main absolute inset-0 bg-no-repeat bg-center bg-cover scale-[1] transition-all duration-300"
+                                                         style="background-image: url({{ portfolio.image.url }})"></div>
                                                 </div>
-                                                <div class="additional_images w-full h-auto clear-both float-left">
-                                                    <ul class="gallery_zoom ml-[-30px] list-none">
-                                                        <li class="mb-[30px] float-left w-1/2 pl-[30px]">
-                                                            <div class="list_inner w-full h-auto clear-both float-left relative">
-                                                                <div class="image relative">
-                                                                    <img class="opacity-0 min-w-full"
-                                                                         src="{% static 'portfolio/assets/img/thumbs/4-2.jpg' %}"
-                                                                         alt=""/>
-                                                                    <div class="main absolute inset-0 bg-no-repeat bg-center bg-cover rounded-[10px]"
-                                                                         data-img-url="{% static 'portfolio/assets/img/portfolio/7.jpg' %}"></div>
-                                                                    <a class="edrea_tm_full_link zoom"
-                                                                       href="{% static 'portfolio/assets/img/portfolio/7.jpg' %}"></a>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="mb-[30px] float-left w-1/2 pl-[30px]">
-                                                            <div class="list_inner w-full h-auto clear-both float-left relative">
-                                                                <div class="image relative">
-                                                                    <img class="opacity-0 min-w-full"
-                                                                         src="{% static 'portfolio/assets/img/thumbs/4-2.jpg' %}"
-                                                                         alt=""/>
-                                                                    <div class="main absolute inset-0 bg-no-repeat bg-center bg-cover rounded-[10px]"
-                                                                         data-img-url="{% static 'portfolio/assets/img/portfolio/8.jpg' %}"></div>
-                                                                    <a class="edrea_tm_full_link zoom"
-                                                                       href="{% static 'portfolio/assets/img/portfolio/8.jpg' %}"></a>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="mb-[30px] float-left w-1/2 pl-[30px]">
-                                                            <div class="list_inner w-full h-auto clear-both float-left relative">
-                                                                <div class="image relative">
-                                                                    <img class="opacity-0 min-w-full"
-                                                                         src="{% static 'portfolio/assets/img/thumbs/4-2.jpg' %}"
-                                                                         alt=""/>
-                                                                    <div class="main absolute inset-0 bg-no-repeat bg-center bg-cover rounded-[10px]"
-                                                                         data-img-url="{% static 'portfolio/assets/img/portfolio/9.jpg' %}"></div>
-                                                                    <a class="edrea_tm_full_link zoom"
-                                                                       href="{% static 'portfolio/assets/img/portfolio/9.jpg' %}"></a>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
+                                                <div class="details">
+                                                    <h3>{{ portfolio.title }}</h3>
+                                                    <span>{{ portfolio.short_des }}</span>
                                                 </div>
+                                                <a class="edrea_tm_full_link popup-vimeo"
+                                                   href="{{ portfolio.project_url }}" target="_blank"></a>
                                             </div>
                                         </div>
-
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="list_inner w-full h-auto clear-both float-left relative rounded-[10px] overflow-hidden">
-                                        <div class="image relative overflow-hidden">
-                                            <img class="relative min-w-full opacity-0"
-                                                 src="{% static 'portfolio/assets/img/thumbs/1-1.jpg' %}" alt=""/>
-                                            <div class="main absolute inset-0 bg-no-repeat bg-center bg-cover scale-[1] transition-all duration-300"
-                                                 data-img-url="{% static 'portfolio/assets/img/portfolio/5.jpg' %}"></div>
-                                        </div>
-                                        <div class="details absolute z-[2] bottom-[-100] left-[20] bg-white-color px-[20] py-[10px] rounded-[5px] transition-all duration-300">
-                                            <h3 class="text-black text-[15px] mb-[2px]">Blue Lemon</h3>
-                                            <span class="text-[#777] text-[14px]">Image</span>
-                                        </div>
-                                        <a class="edrea_tm_full_link zoom"
-                                           href="{% static 'portfolio/assets/img/portfolio/5.jpg' %}"></a>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="list_inner w-full h-auto clear-both float-left relative rounded-[10px] overflow-hidden">
-                                        <div class="image relative overflow-hidden">
-                                            <img class="relative min-w-full opacity-0"
-                                                 src="{% static 'portfolio/assets/img/thumbs/1-1.jpg' %}" alt=""/>
-                                            <div class="main absolute inset-0 bg-no-repeat bg-center bg-cover scale-[1] transition-all duration-300"
-                                                 data-img-url="{% static 'portfolio/assets/img/portfolio/6.jpg' %}"></div>
-                                        </div>
-                                        <div class="details">
-                                            <h3>Sweet Cherry</h3>
-                                            <span>Image</span>
-                                        </div>
-                                        <a class="edrea_tm_full_link zoom"
-                                           href="{% static 'portfolio/assets/img/portfolio/6.jpg' %}"></a>
-                                    </div>
-                                </div>
+                                    </a>
+                                {% endfor %}
                             </div>
                             <div class="edrea_tm_swiper_progress fill">
                                 <div class="my_pagination_in">
@@ -762,264 +626,36 @@
                     <div class="news_list w-full h-auto clear-both float-left relative">
                         <div class="swiper-container">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="list_inner w-full h-auto clear-both float-left relative rounded-[10px] overflow-hidden">
-                                        <div class="image relative overflow-hidden">
-                                            <img class="relative opacity-0 min-w-full"
-                                                 src="{% static 'portfolio/assets/img/thumbs/4-3.jpg' %}" alt=""/>
-                                            <div class="main  absolute inset-0 bg-no-repeat bg-center bg-cover scale-[1] transition-all duration-300"
-                                                 data-img-url="{% static 'portfolio/assets/img/news/1.jpg' %}"></div>
-                                            <a class="edrea_tm_full_link news_popup" href="#"></a>
-                                        </div>
-                                        <div class="details w-full float-left bg-[#222] pt-[30px] pr-[20px] pb-[27px] pl-[20px]">
-                                            <h3 class="text-[15px] mb-[4px]"><a
-                                                    class="no-underline text-white-color transition-all duration-300 hover:text-pink-color"
-                                                    href="#">Building brands through customer service</a></h3>
-                                            <span><a
-                                                    class="no-underline text-main-color text-[14px] transition-all duration-300 hover:text-white-color"
-                                                    href="#">Branding</a></span>
-                                        </div>
+                                {% for post in news %}
+                                    <div class="swiper-slide">
+                                        <div class="list_inner w-full h-auto clear-both float-left relative rounded-[10px] overflow-hidden">
+                                            <div class="image relative overflow-hidden">
+                                                <img class="relative opacity-0 min-w-full"
+                                                     src="{% static 'portfolio/assets/img/thumbs/4-3.jpg' %}" alt=""/>
+                                                <div class="main  absolute inset-0 bg-no-repeat bg-center bg-cover scale-[1] transition-all duration-300"
+                                                     data-img-url="{{ post.image.url }}"></div>
+                                                <a class="edrea_tm_full_link news_popup" href="#"></a>
+                                            </div>
+                                            <div class="details w-full float-left bg-[#222] pt-[30px] pr-[20px] pb-[27px] pl-[20px]">
+                                                <h3 class="text-[15px] mb-[4px]"><a
+                                                        class="no-underline text-white-color transition-all duration-300 hover:text-pink-color"
+                                                        href="#">{{ post.title }}</a></h3>
+                                                <span><a
+                                                        class="no-underline text-main-color text-[14px] transition-all duration-300 hover:text-white-color"
+                                                        href="#">{{ post.short_des }}</a></span>
+                                            </div>
 
-                                        <div class="edrea_tm_hidden_content">
-                                            <div class="news_popup_details w-full h-auto clear-both float-left px-[50px] pt-[50px] pb-[42px]">
-                                                <div class="text w-full float-left">
-                                                    <p class="mb-[10px]">RashiDeveloper is a leading web design agency with an
-                                                        award-winning design team that creates innovative, effective
-                                                        websites that capture your brand, improve your conversion rates,
-                                                        and maximize your revenue to help grow your business and achieve
-                                                        your goals.</p>
-                                                    <p class="mb-[10px]">In today’s digital world, your website is the
-                                                        first interaction consumers have with your business. That's why
-                                                        almost 95 percent of a user’s first impression relates to web
-                                                        design. It’s also why web design services can have an immense
-                                                        impact on your company’s bottom line.</p>
-                                                    <p>That’s why more companies are not only reevaluating their
-                                                        website’s design but also partnering with Kura, the web design
-                                                        agency that’s driven more than $2.4 billion in revenue for its
-                                                        clients. With over 50 web design awards under our belt, we're
-                                                        confident we can design a custom website that drives sales for
-                                                        your unique business.</p>
+                                            <div class="edrea_tm_hidden_content">
+                                                <div class="news_popup_details w-full h-auto clear-both float-left px-[50px] pt-[50px] pb-[42px]">
+                                                    <div class="text w-full float-left">
+                                                        {{ post.long_des|safe }}
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-
                                     </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="list_inner w-full h-auto clear-both float-left relative rounded-[10px] overflow-hidden">
-                                        <div class="image relative overflow-hidden">
-                                            <img class="relative opacity-0 min-w-full"
-                                                 src="{% static 'portfolio/assets/img/thumbs/4-3.jpg' %}" alt=""/>
-                                            <div class="main  absolute inset-0 bg-no-repeat bg-center bg-cover scale-[1] transition-all duration-300"
-                                                 data-img-url="{% static 'portfolio/assets/img/news/2.jpg' %}"></div>
-                                            <a class="edrea_tm_full_link news_popup" href="#"></a>
-                                        </div>
-                                        <div class="details w-full float-left bg-[#222] pt-[30px] pr-[20px] pb-[27px] pl-[20px]">
-                                            <h3 class="text-[15px] mb-[4px]"><a
-                                                    class="no-underline text-white-color transition-all duration-300 hover:text-pink-color"
-                                                    href="#">Unstoppable Jamstack and Gatsby opportunity</a></h3>
-                                            <span><a
-                                                    class="no-underline text-main-color text-[14px] transition-all duration-300 hover:text-white-color"
-                                                    href="#">Design</a></span>
-                                        </div>
+                                {% endfor %}
 
-                                        <div class="edrea_tm_hidden_content">
-                                            <div class="news_popup_details w-full h-auto clear-both float-left px-[50px] pt-[50px] pb-[42px]">
-                                                <div class="text w-full float-left">
-                                                    <p class="mb-[10px]">RashiDeveloper is a leading web design agency with an
-                                                        award-winning design team that creates innovative, effective
-                                                        websites that capture your brand, improve your conversion rates,
-                                                        and maximize your revenue to help grow your business and achieve
-                                                        your goals.</p>
-                                                    <p class="mb-[10px]">In today’s digital world, your website is the
-                                                        first interaction consumers have with your business. That's why
-                                                        almost 95 percent of a user’s first impression relates to web
-                                                        design. It’s also why web design services can have an immense
-                                                        impact on your company’s bottom line.</p>
-                                                    <p>That’s why more companies are not only reevaluating their
-                                                        website’s design but also partnering with Kura, the web design
-                                                        agency that’s driven more than $2.4 billion in revenue for its
-                                                        clients. With over 50 web design awards under our belt, we're
-                                                        confident we can design a custom website that drives sales for
-                                                        your unique business.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="list_inner w-full h-auto clear-both float-left relative rounded-[10px] overflow-hidden">
-                                        <div class="image relative overflow-hidden">
-                                            <img class="relative opacity-0 min-w-full"
-                                                 src="{% static 'portfolio/assets/img/thumbs/4-3.jpg' %}" alt=""/>
-                                            <div class="main  absolute inset-0 bg-no-repeat bg-center bg-cover scale-[1] transition-all duration-300"
-                                                 data-img-url="{% static 'portfolio/assets/img/news/3.jpg' %}"></div>
-                                            <a class="edrea_tm_full_link news_popup" href="#"></a>
-                                        </div>
-                                        <div class="details w-full float-left bg-[#222] pt-[30px] pr-[20px] pb-[27px] pl-[20px]">
-                                            <h3 class="text-[15px] mb-[4px]"><a
-                                                    class="no-underline text-white-color transition-all duration-300 hover:text-pink-color"
-                                                    href="#">Electron framework adds encryption API</a></h3>
-                                            <span><a
-                                                    class="no-underline text-main-color text-[14px] transition-all duration-300 hover:text-white-color"
-                                                    href="#">Media</a></span>
-                                        </div>
-
-                                        <div class="edrea_tm_hidden_content">
-                                            <div class="news_popup_details w-full h-auto clear-both float-left px-[50px] pt-[50px] pb-[42px]">
-                                                <div class="text w-full float-left">
-                                                    <p class="mb-[10px]">RashiDeveloper is a leading web design agency with an
-                                                        award-winning design team that creates innovative, effective
-                                                        websites that capture your brand, improve your conversion rates,
-                                                        and maximize your revenue to help grow your business and achieve
-                                                        your goals.</p>
-                                                    <p class="mb-[10px]">In today’s digital world, your website is the
-                                                        first interaction consumers have with your business. That's why
-                                                        almost 95 percent of a user’s first impression relates to web
-                                                        design. It’s also why web design services can have an immense
-                                                        impact on your company’s bottom line.</p>
-                                                    <p>That’s why more companies are not only reevaluating their
-                                                        website’s design but also partnering with Kura, the web design
-                                                        agency that’s driven more than $2.4 billion in revenue for its
-                                                        clients. With over 50 web design awards under our belt, we're
-                                                        confident we can design a custom website that drives sales for
-                                                        your unique business.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="list_inner w-full h-auto clear-both float-left relative rounded-[10px] overflow-hidden">
-                                        <div class="image relative overflow-hidden">
-                                            <img class="relative opacity-0 min-w-full"
-                                                 src="{% static 'portfolio/assets/img/thumbs/4-3.jpg' %}" alt=""/>
-                                            <div class="main  absolute inset-0 bg-no-repeat bg-center bg-cover scale-[1] transition-all duration-300"
-                                                 data-img-url="{% static 'portfolio/assets/img/news/4.jpg' %}"></div>
-                                            <a class="edrea_tm_full_link news_popup" href="#"></a>
-                                        </div>
-                                        <div class="details w-full float-left bg-[#222] pt-[30px] pr-[20px] pb-[27px] pl-[20px]">
-                                            <h3 class="text-[15px] mb-[4px]"><a
-                                                    class="no-underline text-white-color transition-all duration-300 hover:text-pink-color"
-                                                    href="#">Sentry for JavaScript monitors release health</a></h3>
-                                            <span><a
-                                                    class="no-underline text-main-color text-[14px] transition-all duration-300 hover:text-white-color"
-                                                    href="#">Technology</a></span>
-                                        </div>
-
-                                        <div class="edrea_tm_hidden_content">
-                                            <div class="news_popup_details w-full h-auto clear-both float-left px-[50px] pt-[50px] pb-[42px]">
-                                                <div class="text w-full float-left">
-                                                    <p class="mb-[10px]">RashiDeveloper is a leading web design agency with an
-                                                        award-winning design team that creates innovative, effective
-                                                        websites that capture your brand, improve your conversion rates,
-                                                        and maximize your revenue to help grow your business and achieve
-                                                        your goals.</p>
-                                                    <p class="mb-[10px]">In today’s digital world, your website is the
-                                                        first interaction consumers have with your business. That's why
-                                                        almost 95 percent of a user’s first impression relates to web
-                                                        design. It’s also why web design services can have an immense
-                                                        impact on your company’s bottom line.</p>
-                                                    <p>That’s why more companies are not only reevaluating their
-                                                        website’s design but also partnering with Kura, the web design
-                                                        agency that’s driven more than $2.4 billion in revenue for its
-                                                        clients. With over 50 web design awards under our belt, we're
-                                                        confident we can design a custom website that drives sales for
-                                                        your unique business.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="list_inner w-full h-auto clear-both float-left relative rounded-[10px] overflow-hidden">
-                                        <div class="image relative overflow-hidden">
-                                            <img class="relative opacity-0 min-w-full"
-                                                 src="{% static 'portfolio/assets/img/thumbs/4-3.jpg' %}" alt=""/>
-                                            <div class="main  absolute inset-0 bg-no-repeat bg-center bg-cover scale-[1] transition-all duration-300"
-                                                 data-img-url="{% static 'portfolio/assets/img/news/5.jpg' %}"></div>
-                                            <a class="edrea_tm_full_link news_popup" href="#"></a>
-                                        </div>
-                                        <div class="details w-full float-left bg-[#222] pt-[30px] pr-[20px] pb-[27px] pl-[20px]">
-                                            <h3 class="text-[15px] mb-[4px]"><a
-                                                    class="no-underline text-white-color transition-all duration-300 hover:text-pink-color"
-                                                    href="#">Five reasons to begin a Packt subscription</a></h3>
-                                            <span><a
-                                                    class="no-underline text-main-color text-[14px] transition-all duration-300 hover:text-white-color"
-                                                    href="#">Lifestyle</a></span>
-                                        </div>
-
-                                        <div class="edrea_tm_hidden_content">
-                                            <div class="news_popup_details w-full h-auto clear-both float-left px-[50px] pt-[50px] pb-[42px]">
-                                                <div class="text w-full float-left">
-                                                    <p class="mb-[10px]">RashiDeveloper is a leading web design agency with an
-                                                        award-winning design team that creates innovative, effective
-                                                        websites that capture your brand, improve your conversion rates,
-                                                        and maximize your revenue to help grow your business and achieve
-                                                        your goals.</p>
-                                                    <p class="mb-[10px]">In today’s digital world, your website is the
-                                                        first interaction consumers have with your business. That's why
-                                                        almost 95 percent of a user’s first impression relates to web
-                                                        design. It’s also why web design services can have an immense
-                                                        impact on your company’s bottom line.</p>
-                                                    <p>That’s why more companies are not only reevaluating their
-                                                        website’s design but also partnering with Kura, the web design
-                                                        agency that’s driven more than $2.4 billion in revenue for its
-                                                        clients. With over 50 web design awards under our belt, we're
-                                                        confident we can design a custom website that drives sales for
-                                                        your unique business.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="list_inner w-full h-auto clear-both float-left relative rounded-[10px] overflow-hidden">
-                                        <div class="image relative overflow-hidden">
-                                            <img class="relative opacity-0 min-w-full"
-                                                 src="{% static 'portfolio/assets/img/thumbs/4-3.jpg' %}" alt=""/>
-                                            <div class="main  absolute inset-0 bg-no-repeat bg-center bg-cover scale-[1] transition-all duration-300"
-                                                 data-img-url="{% static 'portfolio/assets/img/news/6.jpg' %}"></div>
-                                            <a class="edrea_tm_full_link news_popup" href="#"></a>
-                                        </div>
-                                        <div class="details w-full float-left bg-[#222] pt-[30px] pr-[20px] pb-[27px] pl-[20px]">
-                                            <h3 class="text-[15px] mb-[4px]"><a
-                                                    class="no-underline text-white-color transition-all duration-300 hover:text-pink-color"
-                                                    href="#">Why developers are so divided over WordPress</a></h3>
-                                            <span><a
-                                                    class="no-underline text-main-color text-[14px] transition-all duration-300 hover:text-white-color"
-                                                    href="#">Modern</a></span>
-                                        </div>
-
-                                        <div class="edrea_tm_hidden_content">
-                                            <div class="news_popup_details w-full h-auto clear-both float-left px-[50px] pt-[50px] pb-[42px]">
-                                                <div class="text w-full float-left">
-                                                    <p class="mb-[10px]">RashiDeveloper is a leading web design agency with an
-                                                        award-winning design team that creates innovative, effective
-                                                        websites that capture your brand, improve your conversion rates,
-                                                        and maximize your revenue to help grow your business and achieve
-                                                        your goals.</p>
-                                                    <p class="mb-[10px]">In today’s digital world, your website is the
-                                                        first interaction consumers have with your business. That's why
-                                                        almost 95 percent of a user’s first impression relates to web
-                                                        design. It’s also why web design services can have an immense
-                                                        impact on your company’s bottom line.</p>
-                                                    <p>That’s why more companies are not only reevaluating their
-                                                        website’s design but also partnering with Kura, the web design
-                                                        agency that’s driven more than $2.4 billion in revenue for its
-                                                        clients. With over 50 web design awards under our belt, we're
-                                                        confident we can design a custom website that drives sales for
-                                                        your unique business.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
                             </div>
                             <div class="edrea_tm_swiper_progress fill">
                                 <div class="my_pagination_in">
@@ -1086,8 +722,9 @@
                         </div>
                         <div class="right w-1/2 pl-[50px]">
                             <div class="fields w-full h-auto clear-both float-left">
-                                <form action="../../../external.html?link=https://marketifythemes.net/" method="post"
+                                <form action="{% url 'contact' %}" method="post"
                                       class="contact_form" id="contact_form">
+                                    {% csrf_token %}
                                     <div class="returnmessage"
                                          data-success="Your message has been received, We will contact you soon."></div>
 
@@ -1096,27 +733,27 @@
                                             <li class="m-0 w-1/2 pl-[20px] float-left">
                                                 <div class="list_inner w-full h-auto clear-both float-left bg-[#222] rounded-[10px]">
                                                     <input class="w-full h-[45px] bg-transparent border-none text-main-color p-[20px] font-poppins"
-                                                           id="name" type="text" placeholder="Name" autocomplete="off">
+                                                           id="name" name="name" type="text" placeholder="Name"
+                                                           autocomplete="off">
                                                 </div>
                                             </li>
                                             <li class="m-0 w-1/2 pl-[20px] float-left">
                                                 <div class="list_inner w-full h-auto clear-both float-left bg-[#222] rounded-[10px]">
                                                     <input class="w-full h-[45px] bg-transparent border-none text-main-color p-[20px] font-poppins"
-                                                           id="email" type="text" placeholder="Email"
+                                                           id="email" name="email" type="text" placeholder="Email"
                                                            autocomplete="off">
                                                 </div>
                                             </li>
                                         </ul>
                                     </div>
                                     <div class="last w-full float-left bg-[#222] rounded-[10px] mb-[20px]">
-                                        <textarea
-                                                class="w-full h-[108px] bg-transparent border-none text-main-color resize-none p-[20px] font-poppins"
-                                                id="message" placeholder="Message"></textarea>
+                                        <textarea name="message"
+                                                  class="w-full h-[108px] bg-transparent border-none text-main-color resize-none p-[20px] font-poppins"
+                                                  id="message" placeholder="Message"></textarea>
                                     </div>
                                     <div class="edrea_tm_button">
-                                        <a id="send_message" href="#">Send Message</a>
+                                        <button class="button" type="submit">Send Message</button>
                                     </div>
-
                                 </form>
                             </div>
                         </div>
